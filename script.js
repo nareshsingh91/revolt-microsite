@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
       carouselHtml += `
         <div class="carousel-item ${idx === 0 ? 'active' : ''}" style="display: ${idx === 0 ? 'block' : 'none'};">
           <img src="${c.img}" alt="Revolt ${modelName} ${c.name}" class="img-fluid" onerror="this.onerror=null; this.src='assets/revolt_rv400.jpg';">
-          <div class="color-title mt-2">${c.name}</div>
+          <div class="color-title d-lg-none mt-2">${c.name}</div>
         </div>
       `;
     });
