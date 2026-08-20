@@ -404,14 +404,13 @@ body {
 
 .color-title {
   display: inline-block;
-  font-size: 0.74rem;
-  font-weight: 500;
-  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
   letter-spacing: 0.2px;
-  background-color: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  padding: 2px 10px;
-  border-radius: 50px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 /* Two-Tone Color Swatches (Matching Reference Image) */
