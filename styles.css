@@ -278,9 +278,9 @@ body {
 }
 
 .model-select-item.active {
-  background-color: #ffebee;
-  color: var(--revolt-red);
-  font-weight: 800;
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+  font-weight: 700;
 }
 
 .hero-subhead {
