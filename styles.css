@@ -1001,6 +1001,10 @@ body {
     max-height: 420px;
   }
 
+  .color-title {
+    margin-top: -5px;
+  }
+
   .lead-form-zone {
     padding: 36px 32px;
     border-radius: 24px;
