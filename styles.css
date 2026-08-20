@@ -55,6 +55,51 @@ body {
   position: relative;
 }
 
+/* ==========================================
+   HERO GRADIENT BACKGROUND
+=========================================== */
+#hero-zone {
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(59, 115, 237, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(59, 115, 237, 0.04) 0%, transparent 60%),
+    linear-gradient(160deg, #f0f6ff 0%, #ffffff 55%, #fafbff 100%);
+  border-radius: 0 0 28px 28px;
+  padding: 0 0 12px;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Fade-in animation for hero content */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-headline,
+.hero-subhead,
+.btn-revolt-primary,
+.btn-revolt-call {
+  animation: heroFadeUp 0.5s ease both;
+}
+
+.hero-headline { animation-delay: 0s; }
+.hero-subhead  { animation-delay: 0.1s; }
+.btn-revolt-primary { animation-delay: 0.2s; }
+.btn-revolt-call    { animation-delay: 0.25s; }
+
+.bike-hero-visual {
+  animation: heroFadeUp 0.6s ease 0.15s both;
+}
+
 @media (min-width: 769px) {
   .microsite-mobile-frame {
     max-width: 100%;
@@ -64,11 +109,21 @@ body {
   }
 }
 
+/* Remove top padding so hero is flush with header */
+.main-content-container {
+  padding-top: 0 !important;
+}
+
 /* Header */
 .microsite-header {
-  padding: 14px 24px;
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .brand-logo {
@@ -77,9 +132,9 @@ body {
 }
 
 .brand-logo-img {
-  height: 38px;
+  height: 24px;
   width: auto;
-  max-width: 190px;
+  max-width: 140px;
   object-fit: contain;
 }
 
@@ -87,16 +142,18 @@ body {
   background-color: #427df2;
   color: #ffffff !important;
   font-weight: 600;
-  font-size: 0.92rem;
-  padding: 8px 20px;
-  border-radius: 9px;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  height: 40px;
+  line-height: 1;
+  border-radius: 6px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
   border: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
 }
 
 .btn-header-call:hover,
@@ -136,10 +193,10 @@ body {
 /* Typography Overrides */
 .hero-headline {
   font-weight: 600;
-  font-size: 1.65rem;
-  line-height: 1.25;
+  font-size: 1.1rem;
+  line-height: 1.3;
   color: var(--revolt-black);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.2px;
 }
 
 /* Model Dropdown Selector matching reference screenshot */
@@ -150,7 +207,7 @@ body {
 
 .model-select-trigger {
   font-family: inherit;
-  font-size: 1.65rem;
+  font-size: inherit;
   font-weight: 600;
   color: #000000 !important;
   background: transparent !important;
@@ -187,7 +244,7 @@ body {
   background: #ffffff;
   border: 1px solid #cbd5e1 !important;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important;
 }
 
 .model-dropdown-menu.show {
@@ -337,10 +394,15 @@ body {
 }
 
 .color-title {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #334155;
-  letter-spacing: 0.2px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.3px;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 3px 12px;
+  border-radius: 50px;
 }
 
 /* Two-Tone Color Swatches (Matching Reference Image) */
@@ -431,17 +493,17 @@ body {
 .lead-form-zone {
   background-color: #ffffff;
   border: 1px solid #f1f5f9;
-  border-radius: 24px;
-  padding: 32px 24px;
+  border-radius: 20px;
+  padding: 20px 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 .lead-form-heading {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #111827;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .form-label-custom {
@@ -708,12 +770,12 @@ body {
 }
 
 .testimonials-heading {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #111827;
   text-align: center;
-  margin-bottom: 28px;
-  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
 }
 
 /* Unified Section Spacing & Vertical Rhythm */
@@ -798,9 +860,9 @@ body {
 
 .ownership-title {
   font-weight: 600;
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   color: #111827;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
 }
 
 .ownership-desc {
@@ -829,7 +891,7 @@ body {
 
 .ownership-stat {
   font-weight: 600;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: #111827;
   line-height: 1.1;
   margin-bottom: 8px;
@@ -895,25 +957,27 @@ body {
 =========================================== */
 @media (min-width: 992px) {
   .microsite-header {
-    padding: 18px 48px;
+    padding: 10px 48px;
     max-width: 1280px;
     margin: 0 auto;
   }
 
   .brand-logo-img {
-    height: 44px;
-    max-width: 220px;
+    height: 28px;
+    max-width: 150px;
   }
 
   .main-content-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 20px 48px !important;
+    padding: 0 48px 20px !important;
   }
 
   .hero-headline {
     font-size: 2.5rem;
-    line-height: 1.25;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    white-space: normal;
   }
 
   .model-select-trigger {
@@ -930,6 +994,12 @@ body {
 
   .lead-form-zone {
     padding: 36px 32px;
+    border-radius: 24px;
+  }
+
+  .lead-form-heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
 
   .ownership-section {
@@ -938,6 +1008,17 @@ body {
 
   .ownership-title {
     font-size: 2.4rem;
+    letter-spacing: -0.5px;
+  }
+
+  .ownership-stat {
+    font-size: 2.2rem;
+  }
+
+  .testimonials-heading {
+    font-size: 1.75rem;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
   }
 
   .spec-val {
@@ -946,6 +1027,113 @@ body {
 
   .spec-lbl {
     font-size: 1.05rem;
+  }
+
+  #hero-zone {
+    margin-left: -48px;
+    margin-right: -48px;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 44px;
+    padding-bottom: 32px;
+    border-radius: 0 0 36px 36px;
+    background:
+      radial-gradient(ellipse 60% 80% at 75% 30%, rgba(59, 115, 237, 0.09) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 60% at 5% 90%, rgba(59, 115, 237, 0.05) 0%, transparent 55%),
+      linear-gradient(150deg, #eef4ff 0%, #f8fbff 40%, #ffffff 70%);
+  }
+}
+
+/* ==========================================
+   MOBILE-FIRST SPACING FIXES (max 575px)
+=========================================== */
+@media (max-width: 575px) {
+  .main-content-container {
+    padding: 20px 16px !important;
+  }
+
+  #hero-zone {
+    margin-bottom: 16px !important;
+    padding-bottom: 0;
+  }
+
+  #specs-zone {
+    margin-bottom: 16px !important;
+  }
+
+  #trust-lead-wrapper {
+    margin-bottom: 16px !important;
+    row-gap: 16px !important;
+  }
+
+  /* Override Bootstrap mb classes on mobile */
+  .mb-4, .mb-5 {
+    margin-bottom: 16px !important;
+  }
+
+  .mb-lg-5 {
+    margin-bottom: 16px !important;
+  }
+
+  .spec-card {
+    padding: 18px 12px;
+    border-radius: 14px;
+  }
+
+  .spec-val {
+    font-size: 1.4rem;
+  }
+
+  .spec-lbl {
+    font-size: 0.78rem;
+  }
+
+  .ownership-section {
+    padding: 32px 16px;
+    margin-bottom: 32px;
+  }
+
+  .ownership-card {
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+
+  .ownership-stat {
+    font-size: 1.4rem;
+  }
+
+  .trust-feature-card {
+    padding: 14px 12px;
+  }
+
+  .trust-feature-title {
+    font-size: 0.88rem;
+  }
+
+  .trust-feature-desc {
+    font-size: 0.74rem;
+  }
+
+  .testimonial-card {
+    padding: 20px 18px;
+  }
+
+  .testimonial-text {
+    font-size: 0.85rem;
+  }
+
+  #testimonials-zone {
+    padding: 40px 16px;
+  }
+
+  .btn-revolt-primary,
+  .btn-revolt-call {
+    padding: 10px 16px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .hero-subhead {
+    font-size: 0.85rem;
   }
 }
 

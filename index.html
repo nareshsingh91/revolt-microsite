@@ -50,16 +50,11 @@
 
           <!-- Left Column (Desktop & Mobile) -->
           <div class="col-12 col-lg-6">
-            <!-- Authorised Dealer Pill -->
-            <div class="mb-3">
-              <span class="dealer-tag"><i class="ph-fill ph-shield-check me-1"></i> Authorised Revolt Dealer ·
-                Mumbai</span>
-            </div>
 
             <!-- Headline with Interactive Model Dropdown -->
             <h1 class="hero-headline mb-3">
-              <div class="d-inline-flex align-items-center flex-wrap gap-2">
-                <span>Buy Revolt</span>
+              <div class="d-inline-flex align-items-center flex-nowrap gap-2">
+                <span class="text-nowrap">Buy Revolt</span>
                 <div class="dropdown d-inline-block model-select-wrapper">
                   <button class="btn model-select-trigger p-0 d-inline-flex align-items-center gap-1" type="button"
                     id="modelDropdownMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,8 +83,11 @@
                         data-charge="4.5 hrs" data-cost="₹1.5/km">RV400 BRZ</button></li>
                   </ul>
                 </div>
+                <!-- "in Mumbai" inline — mobile only -->
+                <span class="text-nowrap d-lg-none">in Mumbai</span>
               </div>
-              <div class="d-block mt-1">in Mumbai</div>
+              <!-- "in Mumbai" as block — desktop only (original two-line layout) -->
+              <div class="d-none d-lg-block mt-1">in Mumbai</div>
             </h1>
 
             <!-- Pricing Subhead -->
@@ -112,19 +110,19 @@
                     <img src="https://www.revoltmotors.com/images/model/rvx/eclipse-red-02.png"
                       alt="Revolt RV400 Eclipse Red" class="img-fluid"
                       onerror="this.onerror=null; this.src='assets/revolt_rv400.jpg';">
-                    <div class="color-title mt-2">Eclipse Red</div>
+                    <div class="color-title d-lg-none mt-2">Eclipse Red</div>
                   </div>
                   <div class="carousel-item" data-color="blue">
                     <img src="https://www.revoltmotors.com/images/model/rvx/electric-blue-02.png"
                       alt="Revolt RV400 Electric Blue" class="img-fluid"
                       onerror="this.onerror=null; this.src='assets/revolt_rv400.jpg';">
-                    <div class="color-title mt-2">Electric Blue</div>
+                    <div class="color-title d-lg-none mt-2">Electric Blue</div>
                   </div>
                   <div class="carousel-item" data-color="black">
                     <img src="https://www.revoltmotors.com/images/model/rvx/cosmic-black-02.png"
                       alt="Revolt RV400 Cosmic Black" class="img-fluid"
                       onerror="this.onerror=null; this.src='assets/revolt_rv400.jpg';">
-                    <div class="color-title mt-2">Cosmic Black</div>
+                    <div class="color-title d-lg-none mt-2">Cosmic Black</div>
                   </div>
                 </div>
               </div>
